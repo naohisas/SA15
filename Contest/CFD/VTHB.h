@@ -14,7 +14,7 @@
 /*****************************************************************************/
 #pragma once
 
-#include <kvs/Vector4>
+#include <kvs/Vector>
 #include <string>
 #include <vector>
 
@@ -30,7 +30,7 @@ public:
     {
         int group;
         int dataset;
-        kvs::Vec4i amr_box;
+        kvs::Vector<int> amr_box;
         std::string file;
     };
 
