@@ -1,6 +1,6 @@
 /*****************************************************************************/
 /**
- *  @file   main.cpp
+ *  @file   Import.h
  *  @author Naohisa Sakamoto
  */
 /*----------------------------------------------------------------------------
@@ -12,14 +12,17 @@
  *  $Id$
  */
 /*****************************************************************************/
-#include "Import.h"
-#include "Write.h"
-#include "ViewerProgram.h"
-#include "ConverterProgram.h"
+#pragma once
 
-int main( int argc, char** argv )
+#include <kvs/StructuredVolumeObject>
+#include "VTHB.h"
+#include "VTI.h"
+
+
+namespace local
 {
-    ViewerProgram program;
-//    ConverterProgram program;
-    return program.start( argc, argv );
-}
+
+kvs::StructuredVolumeObject* Import( const local::VTI& vti, size_t index );
+kvs::StructuredVolumeObject* Import( const local::VTHB& vthb, size_t index );
+
+} // end of namespace local

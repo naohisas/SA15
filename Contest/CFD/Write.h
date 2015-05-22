@@ -1,6 +1,6 @@
 /*****************************************************************************/
 /**
- *  @file   main.cpp
+ *  @file   Write.h
  *  @author Naohisa Sakamoto
  */
 /*----------------------------------------------------------------------------
@@ -12,14 +12,15 @@
  *  $Id$
  */
 /*****************************************************************************/
-#include "Import.h"
-#include "Write.h"
-#include "ViewerProgram.h"
-#include "ConverterProgram.h"
+#pragma once
 
-int main( int argc, char** argv )
+#include <kvs/StructuredVolumeObject>
+#include <string>
+
+
+namespace local
 {
-    ViewerProgram program;
-//    ConverterProgram program;
-    return program.start( argc, argv );
-}
+
+void Write( const kvs::StructuredVolumeObject* volume, const std::string filename, const bool binary = false );
+
+} // end of namespace local

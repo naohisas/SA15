@@ -1,6 +1,6 @@
 /*****************************************************************************/
 /**
- *  @file   main.cpp
+ *  @file   ConverterProgram.h
  *  @author Naohisa Sakamoto
  */
 /*----------------------------------------------------------------------------
@@ -12,14 +12,17 @@
  *  $Id$
  */
 /*****************************************************************************/
-#include "Import.h"
-#include "Write.h"
-#include "ViewerProgram.h"
-#include "ConverterProgram.h"
+#pragma once
 
-int main( int argc, char** argv )
+#include <kvs/Program>
+
+
+namespace local
 {
-    ViewerProgram program;
-//    ConverterProgram program;
-    return program.start( argc, argv );
-}
+
+class ConverterProgram : public kvs::Program
+{
+    int exec( int argc, char** argv );
+};
+
+} // end of namespace local
