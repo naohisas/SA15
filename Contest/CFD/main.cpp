@@ -19,7 +19,7 @@
 
 int main( int argc, char** argv )
 {
-    ViewerProgram program;
-//    ConverterProgram program;
+    local::ViewerProgram program;
+//    local::ConverterProgram program;
     return program.start( argc, argv );
 }
